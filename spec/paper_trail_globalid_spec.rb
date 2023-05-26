@@ -48,15 +48,15 @@ describe PaperTrailGlobalid do
         describe 'PaperTrail.actor' do
           context 'when value for whodunnit is object of ActiveRecord' do
             it 'returns object' do
-              PaperTrail.whodunnit=@admin
-              expect(PaperTrail.actor).to eq(@admin)
+              PaperTrail.request.whodunnit=@admin
+              expect(PaperTrail.request.actor).to eq(@admin)
             end
           end
 
           context 'when value for whodunnit is not an object of ActiveRecord' do
             it 'returns value itself' do
-              PaperTrail.whodunnit="test"
-              expect(PaperTrail.actor).to eq("test")
+              PaperTrail.request.whodunnit="test"
+              expect(PaperTrail.request.actor).to eq("test")
             end
           end
         end
@@ -64,15 +64,15 @@ describe PaperTrailGlobalid do
         describe '.whodunnit' do
           context 'when value for whodunnit is object of ActiveRecord' do
             it 'returns global id' do
-              PaperTrail.whodunnit=@admin
-              expect(PaperTrail.paper_trail_store[:whodunnit]).to eq(@admin.to_gid)
+              PaperTrail.request.whodunnit=@admin
+              expect(PaperTrail.request.whodunnit).to eq(@admin.to_gid)
             end
           end
 
           context 'when value for whodunnit is not an object of ActiveRecord' do
             it 'returns value itself' do
-              PaperTrail.whodunnit="test"
-              expect(PaperTrail.paper_trail_store[:whodunnit]).to eq("test")
+              PaperTrail.request.whodunnit="test"
+              expect(PaperTrail.request.whodunnit).to eq("test")
             end
           end
         end
