@@ -11,9 +11,9 @@ module PaperTrailGlobalid
     end
   end
 
-  module ::PaperTrail
-    module VersionConcern
-      include ::PaperTrailGlobalid::VersionConcern
-    end
-  end
+  # module ::PaperTrail
+  #   module VersionConcern
+  #     include ::PaperTrailGlobalid::VersionConcern
+  #   end
+  # end
 end
